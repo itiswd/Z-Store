@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:zag_store/features/home/presentation/pages/success.dart';
 
 class CheckoutScreen extends StatefulWidget {
   const CheckoutScreen({super.key});
@@ -10,6 +11,24 @@ class CheckoutScreen extends StatefulWidget {
 
 class _CheckoutScreenState extends State<CheckoutScreen> {
   final TextEditingController _couponController = TextEditingController();
+
+  void _placeOrder() {
+    // Generate order number
+    final orderNumber =
+        '#${DateTime.now().millisecondsSinceEpoch.toString().substring(7)}';
+
+    // Navigate to success screen
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(
+        builder: (context) => OrderSuccessScreen(
+          orderNumber: orderNumber,
+          totalAmount: '2000.00 EGP',
+          deliveryAddress: 'test address',
+        ),
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -330,7 +349,8 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
           child: SizedBox(
             width: double.infinity,
             child: ElevatedButton(
-              onPressed: () {},
+              onPressed:
+                  _placeOrder, // Updated to call the place order function
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color.fromARGB(255, 216, 11, 25),
                 padding: const EdgeInsets.symmetric(vertical: 16),
