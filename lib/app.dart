@@ -16,7 +16,7 @@ class App extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'ZAG Store',
         theme: ThemeData(fontFamily: 'Roboto'),
-        home: const HomePage(),
+        home: const MainNavigationScreen(),
       ),
     );
   }
