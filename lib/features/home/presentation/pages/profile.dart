@@ -16,68 +16,83 @@ class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[50],
+      backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
+        automaticallyImplyLeading: false,
         title: Row(
           children: [
             ClipRRect(
               borderRadius: BorderRadius.circular(6.0),
-              child: Container(
+              child: Image.asset(
+                'assets/images/img.png',
                 width: 36.w,
                 height: 36.w,
-                color: const Color.fromARGB(255, 216, 11, 25),
-                child: const Icon(Icons.store, color: Colors.white),
               ),
             ),
             SizedBox(width: 8.w),
             const Text(
               "Powered By ",
-              style: TextStyle(
-                fontSize: 9,
-                fontWeight: FontWeight.w400,
-                color: Colors.grey,
-              ),
+              style: TextStyle(fontSize: 9, fontWeight: FontWeight.w400),
             ),
-            const Text(
-              "ZAGSYSTEMS",
-              style: TextStyle(
-                fontSize: 12,
-                fontWeight: FontWeight.bold,
-                color: Colors.grey,
-              ),
-            ),
+            Image.asset('assets/images/brand2.png', height: 24.h),
           ],
         ),
       ),
       body: SingleChildScrollView(
-        padding: const EdgeInsets.all(16.0),
+        padding: EdgeInsets.all(28.0.r),
         child: Column(
           children: [
             // Profile Info Card
-            Card(
-              elevation: 2,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(16),
+            Container(
+              width: double.infinity,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(12.r),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.1),
+                    spreadRadius: 2,
+                    blurRadius: 4,
+                    offset: const Offset(0, 2),
+                  ),
+                ],
               ),
               child: ExpansionTile(
+                collapsedShape: Border.all(color: Colors.transparent),
+                backgroundColor: Colors.white,
+                tilePadding: const EdgeInsets.symmetric(
+                  horizontal: 16,
+                  vertical: 8,
+                ),
                 leading: CircleAvatar(
-                  backgroundColor: const Color.fromARGB(255, 216, 11, 25),
+                  backgroundColor: const Color(0xFFD80B19),
+                  radius: 20,
                   child: const Text(
                     'HA',
                     style: TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
+                      fontSize: 14,
                     ),
                   ),
                 ),
                 title: const Text(
                   'Profile Info',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                  style: TextStyle(
+                    fontWeight: FontWeight.w600,
+                    fontSize: 16,
+                    color: Colors.black87,
+                  ),
+                ),
+                trailing: const Icon(
+                  Icons.keyboard_arrow_down,
+                  color: Colors.black54,
                 ),
                 children: [
-                  Padding(
+                  Container(
+                    width: double.infinity,
                     padding: const EdgeInsets.all(16.0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -85,49 +100,61 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         const Text(
                           'Details:',
                           style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
+                            fontSize: 14,
+                            fontWeight: FontWeight.w500,
                             color: Colors.grey,
+                          ),
+                        ),
+                        const SizedBox(height: 12),
+                        const Text(
+                          'Name: Hamdy Aouf',
+                          style: TextStyle(
+                            fontSize: 14,
+                            color: Colors.grey,
+                            fontWeight: FontWeight.w400,
                           ),
                         ),
                         const SizedBox(height: 8),
                         const Text(
-                          'Name: Hamdy Aouf',
-                          style: TextStyle(fontSize: 14, color: Colors.grey),
-                        ),
-                        const SizedBox(height: 4),
-                        const Text(
                           'Phone: +201019246279',
-                          style: TextStyle(fontSize: 14, color: Colors.grey),
+                          style: TextStyle(
+                            fontSize: 14,
+                            color: Colors.grey,
+                            fontWeight: FontWeight.w400,
+                          ),
                         ),
-                        const SizedBox(height: 4),
+                        const SizedBox(height: 8),
                         const Text(
                           'Email: abcde@xyz.com',
-                          style: TextStyle(fontSize: 14, color: Colors.grey),
+                          style: TextStyle(
+                            fontSize: 14,
+                            color: Colors.grey,
+                            fontWeight: FontWeight.w400,
+                          ),
                         ),
-                        const SizedBox(height: 16),
+                        const SizedBox(height: 20),
                         Row(
                           children: [
                             Expanded(
                               child: ElevatedButton(
                                 onPressed: () {},
                                 style: ElevatedButton.styleFrom(
-                                  backgroundColor: const Color.fromARGB(
-                                    255,
-                                    216,
-                                    11,
-                                    25,
-                                  ),
+                                  backgroundColor: const Color(0xFFD80B19),
+                                  foregroundColor: Colors.white,
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(8),
                                   ),
                                   padding: const EdgeInsets.symmetric(
                                     vertical: 12,
                                   ),
+                                  elevation: 0,
                                 ),
                                 child: const Text(
                                   'Update Profile',
-                                  style: TextStyle(color: Colors.white),
+                                  style: TextStyle(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w500,
+                                  ),
                                 ),
                               ),
                             ),
@@ -136,22 +163,22 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               child: ElevatedButton(
                                 onPressed: () {},
                                 style: ElevatedButton.styleFrom(
-                                  backgroundColor: const Color.fromARGB(
-                                    255,
-                                    216,
-                                    11,
-                                    25,
-                                  ),
+                                  backgroundColor: const Color(0xFFD80B19),
+                                  foregroundColor: Colors.white,
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(8),
                                   ),
                                   padding: const EdgeInsets.symmetric(
                                     vertical: 12,
                                   ),
+                                  elevation: 0,
                                 ),
                                 child: const Text(
                                   'Reset Password',
-                                  style: TextStyle(color: Colors.white),
+                                  style: TextStyle(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w500,
+                                  ),
                                 ),
                               ),
                             ),
@@ -163,7 +190,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             onPressed: () {},
                             child: const Text(
                               'Request Account Deletion?',
-                              style: TextStyle(color: Colors.grey),
+                              style: TextStyle(
+                                color: Colors.grey,
+                                fontSize: 14,
+                                fontWeight: FontWeight.w400,
+                              ),
                             ),
                           ),
                         ),
@@ -176,55 +207,131 @@ class _ProfileScreenState extends State<ProfileScreen> {
             const SizedBox(height: 16),
 
             // Address Book Card
-            Card(
-              elevation: 2,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(16),
+            Container(
+              width: double.infinity,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(12),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.1),
+                    spreadRadius: 1,
+                    blurRadius: 4,
+                    offset: const Offset(0, 2),
+                  ),
+                ],
               ),
               child: ListTile(
-                leading: const Icon(Icons.home, color: Colors.black),
+                contentPadding: const EdgeInsets.symmetric(
+                  horizontal: 16,
+                  vertical: 8,
+                ),
+                leading: const Icon(
+                  Icons.home,
+                  color: Colors.black87,
+                  size: 22,
+                ),
                 title: const Text(
                   'Address Book',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                  style: TextStyle(
+                    fontWeight: FontWeight.w600,
+                    fontSize: 16,
+                    color: Colors.black87,
+                  ),
                 ),
-                trailing: const Icon(Icons.arrow_forward_ios, size: 16),
+                trailing: const Icon(
+                  Icons.arrow_forward_ios,
+                  size: 16,
+                  color: Colors.black54,
+                ),
                 onTap: () {},
               ),
             ),
             const SizedBox(height: 16),
 
             // Special Offers Card
-            Card(
-              elevation: 2,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(16),
+            Container(
+              width: double.infinity,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(12),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.1),
+                    spreadRadius: 1,
+                    blurRadius: 4,
+                    offset: const Offset(0, 2),
+                  ),
+                ],
               ),
               child: ListTile(
-                leading: const Icon(Icons.local_offer, color: Colors.black),
+                contentPadding: const EdgeInsets.symmetric(
+                  horizontal: 16,
+                  vertical: 8,
+                ),
+                leading: const Icon(
+                  Icons.local_offer,
+                  color: Colors.black87,
+                  size: 22,
+                ),
                 title: const Text(
                   'Special Offers',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                  style: TextStyle(
+                    fontWeight: FontWeight.w600,
+                    fontSize: 16,
+                    color: Colors.black87,
+                  ),
                 ),
-                trailing: const Icon(Icons.arrow_forward_ios, size: 16),
+                trailing: const Icon(
+                  Icons.arrow_forward_ios,
+                  size: 16,
+                  color: Colors.black54,
+                ),
                 onTap: () {},
               ),
             ),
             const SizedBox(height: 16),
 
             // Notification Settings Card
-            Card(
-              elevation: 2,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(16),
+            Container(
+              width: double.infinity,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(12),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.1),
+                    spreadRadius: 1,
+                    blurRadius: 4,
+                    offset: const Offset(0, 2),
+                  ),
+                ],
               ),
               child: ExpansionTile(
-                leading: const Icon(Icons.notifications, color: Colors.black),
+                tilePadding: const EdgeInsets.symmetric(
+                  horizontal: 16,
+                  vertical: 8,
+                ),
+                leading: const Icon(
+                  Icons.notifications,
+                  color: Colors.black87,
+                  size: 22,
+                ),
                 title: const Text(
                   'Notification Settings',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                  style: TextStyle(
+                    fontWeight: FontWeight.w600,
+                    fontSize: 16,
+                    color: Colors.black87,
+                  ),
+                ),
+                trailing: const Icon(
+                  Icons.keyboard_arrow_down,
+                  color: Colors.black54,
                 ),
                 children: [
-                  Padding(
+                  Container(
+                    width: double.infinity,
                     padding: const EdgeInsets.all(16.0),
                     child: Column(
                       children: [
@@ -233,7 +340,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           children: [
                             const Text(
                               'Receive Notifications',
-                              style: TextStyle(fontSize: 14),
+                              style: TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.w400,
+                                color: Colors.black87,
+                              ),
                             ),
                             Switch(
                               value: receiveNotifications,
@@ -242,21 +353,26 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                   receiveNotifications = value;
                                 });
                               },
-                              activeColor: const Color.fromARGB(
-                                255,
-                                216,
-                                11,
-                                25,
-                              ),
+                              activeColor: const Color(0xFFD80B19),
+                              activeTrackColor: const Color(
+                                0xFFD80B19,
+                              ).withOpacity(0.3),
+                              inactiveThumbColor: Colors.grey,
+                              inactiveTrackColor: Colors.grey.withOpacity(0.3),
                             ),
                           ],
                         ),
+                        const SizedBox(height: 8),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             const Text(
                               'When app is opened?',
-                              style: TextStyle(fontSize: 14),
+                              style: TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.w400,
+                                color: Colors.black87,
+                              ),
                             ),
                             Switch(
                               value: whenAppOpened,
@@ -265,21 +381,26 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                   whenAppOpened = value;
                                 });
                               },
-                              activeColor: const Color.fromARGB(
-                                255,
-                                216,
-                                11,
-                                25,
-                              ),
+                              activeColor: const Color(0xFFD80B19),
+                              activeTrackColor: const Color(
+                                0xFFD80B19,
+                              ).withOpacity(0.3),
+                              inactiveThumbColor: Colors.grey,
+                              inactiveTrackColor: Colors.grey.withOpacity(0.3),
                             ),
                           ],
                         ),
+                        const SizedBox(height: 8),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             const Text(
                               'Play Sound?',
-                              style: TextStyle(fontSize: 14),
+                              style: TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.w400,
+                                color: Colors.black87,
+                              ),
                             ),
                             Switch(
                               value: playSound,
@@ -288,12 +409,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                   playSound = value;
                                 });
                               },
-                              activeColor: const Color.fromARGB(
-                                255,
-                                216,
-                                11,
-                                25,
-                              ),
+                              activeColor: const Color(0xFFD80B19),
+                              activeTrackColor: const Color(
+                                0xFFD80B19,
+                              ).withOpacity(0.3),
+                              inactiveThumbColor: Colors.grey,
+                              inactiveTrackColor: Colors.grey.withOpacity(0.3),
                             ),
                           ],
                         ),
@@ -306,18 +427,43 @@ class _ProfileScreenState extends State<ProfileScreen> {
             const SizedBox(height: 16),
 
             // Switch Mode Card
-            Card(
-              elevation: 2,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(16),
+            Container(
+              width: double.infinity,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(12),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.1),
+                    spreadRadius: 1,
+                    blurRadius: 4,
+                    offset: const Offset(0, 2),
+                  ),
+                ],
               ),
               child: ListTile(
-                leading: const Icon(Icons.sync, color: Colors.black),
+                contentPadding: const EdgeInsets.symmetric(
+                  horizontal: 16,
+                  vertical: 8,
+                ),
+                leading: const Icon(
+                  Icons.sync,
+                  color: Colors.black87,
+                  size: 22,
+                ),
                 title: const Text(
                   'Switch Mode',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                  style: TextStyle(
+                    fontWeight: FontWeight.w600,
+                    fontSize: 16,
+                    color: Colors.black87,
+                  ),
                 ),
-                trailing: const Icon(Icons.arrow_forward_ios, size: 16),
+                trailing: const Icon(
+                  Icons.arrow_forward_ios,
+                  size: 16,
+                  color: Colors.black54,
+                ),
                 onTap: () {},
               ),
             ),
